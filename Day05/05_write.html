@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>document.write 사용</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+    </body>
+    <script>
+        document.write("<h3>Welcome</h3>");
+        document.write("<pre>");
+        document.writeln("Hello Hello");
+        document.writeln("Are there Jaesu?");
+        document.writeln("Aren't there Jaesu?");
+        document.write("</pre>");
+
+        // 반복되는 객체 사용을 편하게 하기 위해 with 사용 가능
+        // with(객체명){실행할문장;}
+        // 실행할 문장 앞에는 항상 객체명.이 붙게 된다.
+        with(document){
+            write("<h3>Welcome</h3>");
+            write("<pre>");
+            writeln("Good Evening");
+            writeln("2+5는");
+            write(2+5+"입니다");
+            write("</pre>");
+        }
+    </script>
+</html>

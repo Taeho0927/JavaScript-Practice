@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>확인 대화상자 confirm()</title>
+    </head>
+    <body>
+    </body>
+    <script>
+        var msg = "";
+        var tt = confirm("1억 결제하시겠습니까?");
+        console.log (tt);
+
+        if(tt){
+            msg = "결제되었습니다. 사실 29만원입니다."
+        }
+        else{
+            msg = "후회하실 겁니다."
+        }
+        var ret2 = alert(msg);
+        
+        document.write("<p>"+msg+"</p>")
+    </script>
+</html>
