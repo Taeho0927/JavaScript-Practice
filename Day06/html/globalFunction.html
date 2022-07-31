@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>전역함수(Global Function)</title>
+    </head>
+    <body>
+        <h2>전역함수</h2>
+        <hr>
+    </body>
+    <script>
+        function checkGlobalFunction(){
+            var result1 = eval("(2*3)+(4*6)");
+            var result2 = parseInt("Hellow");
+            console.log(typeof(result1)); //Number
+            document.write("eval((2*3)+(4*6))은" + result1 +"<br>")
+            console.log(result2); //NaN
+
+            if(isNaN(result2)){ //true
+                console.log("숫자 아님");
+            }
+            else{
+                console.log("숫자 맞음");
+            }
+
+            if(isFinite(result2)){ //false
+                console.log("숫자 맞음");
+            }
+            else{
+                console.log("숫자 아님");
+            }
+        }
+        checkGlobalFunction();
+    </script>
+</html>

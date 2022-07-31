@@ -1,0 +1,31 @@
+Day6
+
+1. Javascript 전역함수
+    (1) eval()
+        eval("2*3+4*6") ==> 30
+    (2) parseInt()
+        문자열을 정수타입으로 변환
+        parseInt("32") === 32
+    (3) isNaN()
+        숫자가 아니면 true, 숫자면 false
+    (4) isFinite()
+        숫자면 true, 아니면 false
+
+2. 객체(Object)
+    객체의 고유한 속성을 프로퍼티(Property)라고 부르며
+    여러 프로퍼티와 값의 쌍으로 표현됨.
+
+    account = {name : 'Jack', number : '001234-7000001', code = 'hour24'}
+        - account.프로퍼티명 
+        - account['프로퍼티명']
+
+        객체가 호출하는 함수는 메서드라고 부름.
+        account = {deposit : function(){....}}
+        - account.deposit();
+
+3. DOM(Document Object Model)
+    HTML 태그들을 하나씩 오브젝트화 한 것
+    HTML 페이지의 내용과 모양을 제어하기 위해 사용되는 객체
+    HTML 태그 당 DOM 객체가 하나식 생성
+    HTML 태그의 포함 관계에 따라 부모-자식 관계로 구성
+    

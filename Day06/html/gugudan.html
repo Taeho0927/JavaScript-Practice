@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>구구단(GuGudan)</title>
+    </head>
+    <body>
+        <h1>구구단</h1>
+        <h2>사용자님께서 입력하신 단으로 출력해드립니다.</h2>
+        <hr>
+    </body>
+    <script>
+        while(true){
+            var input = prompt("몇 단으로 해드릴까요");
+            var dan = parseInt(input);
+            console.log(dan);
+            var check = input - dan != 0.0;
+            
+            if(check || isNaN(dan) || dan<1){
+                alert("잘못입력하셨습니다.");
+            }
+            else{
+                if(printGugudan(dan)){break;}
+            }
+        }
+
+        function printGugudan(dan){
+            for(let i=1;i<dan+1;i++){//단
+                document.write("<p> "+dan+" * "+i+"="+dan*i+"</p>");
+            }
+            return true;
+        }
+    </script>
+</html>

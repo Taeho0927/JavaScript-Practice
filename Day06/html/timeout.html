@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Timeouts</title>
+    </head>
+    <body>
+        <h1>마우스 올려보세요</h1>
+        <hr>
+        <div onmouseover="body.style.background='yellow'"
+             onmouseout="body.style.background='white'">
+            바로 이곳에 마우스를 올리면 색깔 바꿔드립니다.
+        </div>
+        <h1>지정된 시간이 지나고 함수 실행</h1>
+
+        <div id="wrap"></div>
+</body>
+    <script>
+        // setTimeout(함수, 밀리초);
+        function formatYourComputer(){
+            document.write("<p>네 피시는 이제 포맷된다 ㅎㅎ</p>");
+        }        
+
+        //setTimeout(formatYourComputer,3000);
+
+        //setTimeout(function(){
+        //    document.write("<p>니 피씨 포맷된다니까?</p>");
+        //},5000);
+        // setInterval(함수, 밀리초);
+        function formatYourComputer2(){
+            const div = document.getElementById('wrap');
+            let h2 = document.createElement('h2');
+            h2.innerHTML = "너 이제 큰일났다";
+            div.appendChild(h2);
+        }
+
+        var inter = setInterval(formatYourComputer2, 3000);
+        setTimeout(function(){
+            clearInterval(inter);
+        },20000);
+    </script>
+</html>
