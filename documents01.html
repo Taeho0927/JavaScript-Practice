@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Name을 이용한 선택</title>
+    </head>
+    <body>
+        <h3>이름을 이용하여 선택</h3>
+        <hr>
+        <form name="joinForm">
+            <div><input type="text" name="id"></div>
+            <div><input type="password" name="pw"></div>
+            <div>
+                <input type="checkbox" name="lang"value="java" checked>Java
+                <input type="checkbox" name="lang" value="C" >C
+                <input type="checkbox" name="lang" value="python" >python
+            </div>
+        </form>
+    </body>
+    <script>
+        console.log(joinForm);
+        console.log(joinForm.id);
+        console.log(document.getElementsByName('lang'));
+
+        const checkboxes = document.getElementsByName('lang');
+        // checkboxes.forEach(function(checkbox){
+        //     console.log(checkbox.checked);
+        //     checkbox.checked=true;
+        // });
+        checkboxes.forEach((checkbox) => {
+            //console.log(checkbox.checked);
+            // HTML 요소에 checked 속성을 부여하면,
+            // js check 프로퍼티를 false로 설정해도
+            // checked 속성이 HTML 요소에 남아있다.
+            // 체크여부 검사는 js프로퍼티로 검사하는 것이 정확
+            if(checkbox.checked){
+                checkbox.checked = false;
+                console.log(checkbox.checked);
+            }
+            console.log(checkbox.getAttribute("checked"));
+        })
+    </script>
+</html>
