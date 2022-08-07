@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>팝업화면</title>
+        <style>
+            div {
+                text-align: right;
+                padding-right: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="javascript:opener.parent.location='window3.html';window.close();">
+            팝업
+        </a>
+        <div>
+            <label>
+                <input type="checkbox" value="ok">
+                <span>오늘 하루 이 창 열지 않기</span>
+            </label>
+        </div>
+    </body>
+    <script>
+        var checkbox = document.querySelector("input[type='checkbox']");
+        checkbox.addEventListener("click",function(){
+            var check = checkbox.checked;
+            if(check){
+                window.close();
+            }
+        });
+    </script>
+</html>
