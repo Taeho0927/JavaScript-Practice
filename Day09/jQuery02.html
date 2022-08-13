@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery 기초</title>
+    </head>
+    <body>
+        <ul class="bag">
+            <li>Hermes</li>
+            <li>Channel</li>
+            <li>Givenchy</li>
+        </ul>
+    </body>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script>
+        // li 태그 전체 가져오기
+        var lists = $("li");
+        console.log(lists);
+
+        // 클래스 이름이 bag인 태그 전체 가져오기
+        var bags = $(".bag");
+        // bag태그의 자식 태그 전체 가져오기
+        console.log(bags.children());
+        // 자식 태그 중 첫 번재 자식의 내용 가져오기
+        console.log(bags.children().first().text());
+        // bag태그의 부모 태그 가져오기
+        console.log(bags.parent());
+        // bag태그의 마지막 자식 삭제하기
+        bags.children().eq(2).remove();
+        // bag 태그의 두 번째 자식의 내용 가져오기
+        console.log(bags.children().eq(1).text());
+        // bag에 마지막에 새로운 자식 요소 추가하기
+        bags.append("<li>miumiu</li>");
+        // 속성값 가져오기
+        // attr("속성명")
+        console.log(bags.attr("class"));
+        // 속성값 변경하기
+        bags.attr("class","supercar");
+        console.log(bags.attr("class"));
+
+    </script>
+</html>

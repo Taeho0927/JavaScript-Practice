@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Current Location</title>
+    </head>
+    <body>
+        <h3>getCurrentPosition()을 이용한 현재 위치 파악</h3>
+        <hr>
+        <div id="msg">이 곳에 위치 정보 출력</div>
+        <!-- 지도 -->
+        <div id="map" style="width: 800px; height: 800px;"></div>
+    </body>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=924866f4b52b6130aaacb41b0490725a"></script>
+    <script>
+        navigator.geolocation.getCurrentPosition(function(position){
+            var now = new Date(position.timestamp); // 좌표를 구한 시간
+            var lat = position.coords.latitude; // 위도
+            var lon = position.coords.longitude; // 경도
+            var acc = position.coords.accuracy; // 정확도(m)
+            var temp = "";
+
+            temp += "좌표기준시간 : "+now.toUTCString() + "<br>";
+            temp += "현재 위도 :" +lat.toPrecision(15) + "<br>";
+            temp += "현재 경도 :" +lon.toPrecision(15) + "<br>";
+            temp += "정확도 :" +acc+ "(m)<br>";
+
+            document.getElementById("msg").innerHTML = temp;
+
+            var mapContainer = document.getElementById('map');
+            var mapOption = {center: new kakao.maps.LatLng(lat,lon),
+                level: 3};
+
+            //map 생성
+            var map = new kakao.maps.Map(mapContainer,mapOption);
+            // marker 위치
+            var markerPosition = new kakao.maps.LatLng(lat,lon);
+            // marker 생성
+            var marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            // marker 지도에표시
+            marker.setMap(map);
+        });
+    </script>
+</html>

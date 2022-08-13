@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>자동차 주행 테스트</title>
+        <link rel="stylesheet" href="drive.css">
+    </head>
+    <body>
+        <fieldset>
+            <legend>자동차주행</legend>
+            <p id="result">현재상태표시</p>
+            <div id="img"></div>
+            <div class="wrap">
+                <div><input type="password" name="pw"></div>
+                <div id="toggle"></div>
+            </div>
+            <div class="btns">
+                <button id="on">시동켜기</button>
+                <button id="off">시동끄기</button>
+                <button onclick="history.go(0)">초기화</button>
+            </div>
+        </fieldset>
+    </body>
+    <script src="drive.js"></script>
+</html>

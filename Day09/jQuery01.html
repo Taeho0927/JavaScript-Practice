@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery 기초</title>
+    </head>
+    <body>
+        <div><input type="text" class="num" value="1"></div>
+        <div><input type="text" class="num" value="2"></div>
+        <div><input type="text" class="num" value="3"></div>
+        <div>
+            <button onclick="change()">javascript(일반)</button>
+            <button onclick="$('.num').css('border-color','blue');">jQuery</button>
+        </div>
+    </body>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script>
+        function change(){
+            var inputs = document.querySelectorAll(".num");
+            inputs.forEach(function(input, data, abcd){
+                if(data == 0)
+                    input.style.borderColor = "red";
+                else
+                    input.style.borderColor = "yellow";
+                    console.log(input + ":" +"yellow")
+                    
+            });
+        }
+    </script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery 전체동의</title>
+    </head>
+    <body>
+        <form action="" name="myForm">
+            <div><label>전체동의<input type="checkbox" class="all"></label></div>
+            <div><label>서비스 이용약관 동의<input type="checkbox" class="term" name="term1"></label></div>
+            <div><label>정보수집 동의<input type="checkbox" class="term" name="term2"></label></div>
+            <div><label>개인정보이용약관 동의<input type="checkbox" class="term" name="term3"></label></div>
+        </form>
+        <hr>
+        <ul class="dessert">
+            <li>커피</li>
+            <li>케이크</li>
+            <li>콜라</li>
+            <li>아이스크림</li>
+            <li>매운갈비찜</li>
+            <li>순대볶음</li>
+            <li>파르페</li>
+        </ul>
+        <div id="div1" style="cursor: pointer;">Show/Hide</div>
+        <div id="div2" style="cursor: pointer;">Fade In/Out</div>
+        <div id="div3" style="cursor: pointer;">Slide In/Out</div>
+    </body>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script>
+        var $all = $(".all");
+        var $term = $(".term");
+
+        // 하나의 약관이라도 해제가 되면 전체 동의 해제
+        // 각 항목이 모두 체크되면 전체 동의 체크
+        // 선택자에서 :을 사용하면 동작에 관련된 태그를 선택할 수 있다.
+        // :hover, :active, :check 등
+        $all.on("click", function(){
+            if($(this).is(":checked")){
+                $term.prop("checked",true);
+            }
+            else{
+                $term.prop('checked',false);
+            }
+        });
+
+        $term.on('click',function(){
+            // 하나라도 unchecked가 되면 전체선택 해제
+            if($(this).is(":checked")==false){
+                $all.prop('checked',false);
+            }
+            if($term.filter(":checked").length == 3){
+                $all.prop('checked',true);
+            }
+        });
+
+        const $div = $("ul").next();
+        const $ul = $("#div1").prev();
+        
+        $div.on("click", function(){
+            //$('선택자').show(밀리초) : 보이기
+            //$('선택자').hide(밀리초) : 숨기기
+            //$('선택자').toggle(밀리초) : 보이면 숨기고 숨어있으면 보이게
+            $ul.toggle(500);
+        });
+        $("#div2").on("click",function(){
+            //fadeIn(밀리초) : 보이기
+            //fadeOut(밀리초) : 숨기기
+            //fadeToggle
+            $ul.fadeToggle(800);
+        });
+        $("#div3").on("click",function(){
+            //slideIn(밀리초) : 보이기
+            //slideOut(밀리초) : 숨기기
+            //slideToggle: 밀리초를 안줘도 동작함 
+            $ul.slideToggle();
+        });
+    </script>
+</html>
